@@ -4,12 +4,12 @@
 <html>
 <head>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<c:set var="message" value="${100}"></c:set>
-<c:out value="${message}"></c:out>
+<table>
 	<tr>
 		<td></td>
 	</tr>
@@ -19,10 +19,9 @@
 		<th>LastName</th>
 		<th>ManagerID</th>
 	</tr>
-	<c:if test="${not empty employeeList}">
+	<%-- <c:if test="${not empty employeeList}">
 		<c:out value="${employeeList}"></c:out>
-	</c:if>
-	
+	</c:if> --%>
 	<c:forEach var="employee" items="${employeeList}">
 		<tr>
 			<td><c:out value="${employee.getEmployeeId()}"></c:out></td>
@@ -31,5 +30,6 @@
 			<td><c:out value="${employee.getManagerId()}"></c:out></td>
 		</tr>
 	</c:forEach>
+	</table>
 </body>
 </html>

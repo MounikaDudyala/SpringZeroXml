@@ -26,8 +26,8 @@ public class ControllerClass {
 	EmployeeDao employeeDao = new EmployeeDaoImpl();
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public ModelAndView listContact() throws IOException {
-		System.out.println("in listContact");
+	public ModelAndView listEmployee() throws IOException {
+		System.out.println("in listEmployee");
 		ModelAndView model = new ModelAndView("list");
 		List<Employee> empList = employeeDao.fetchEmployees();
 		System.out.println(empList);
