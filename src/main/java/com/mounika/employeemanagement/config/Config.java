@@ -1,4 +1,4 @@
-package com.mounika.zeroxml.config;
+package com.mounika.employeemanagement.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "com.mounika.zeroxml")
+@ComponentScan(basePackages = "com.mounika.employeemanagement")
 public class Config extends WebMvcConfigurerAdapter {
 
 	@Bean

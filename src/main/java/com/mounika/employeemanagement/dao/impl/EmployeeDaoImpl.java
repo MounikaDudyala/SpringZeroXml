@@ -1,4 +1,4 @@
-package com.mounika.zeroxml.impl;
+package com.mounika.employeemanagement.dao.impl;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,10 +9,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.mounika.zeroxml.dao.AbstractDBConnection;
-import com.mounika.zeroxml.dao.EmployeeDao;
-import com.mounika.zeroxml.model.Employee;
-
+import com.mounika.employeemanagement.dao.AbstractDBConnection;
+import com.mounika.employeemanagement.dao.EmployeeDao;
+import com.mounika.employeemanagement.model.Employee;
 @Repository
 public class EmployeeDaoImpl extends AbstractDBConnection implements EmployeeDao {
 	public List<Employee> fetchEmployees() {
@@ -42,6 +41,5 @@ public class EmployeeDaoImpl extends AbstractDBConnection implements EmployeeDao
 			System.out.println("message");
 		}
 		return null;
-	}
-
+}
 }

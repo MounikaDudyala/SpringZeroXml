@@ -1,4 +1,4 @@
-package com.mounika.zeroxml.model;
+package com.mounika.employeemanagement.model;
 
 public class Employee {
 	private String empId;
