@@ -9,27 +9,29 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="new">NEW</a>
 <table>
-	<tr>
-		<td></td>
-	</tr>
+<tr><td><h5>${message}</h5></td></tr>
 	<tr>
 		<th>EmpID</th>
 		<th>FirstName</th>
 		<th>LastName</th>
 		<th>ManagerID</th>
 	</tr>
-	<%-- <c:if test="${not empty employeeList}">
-		<c:out value="${employeeList}"></c:out>
-	</c:if> --%>
 	<c:forEach var="employee" items="${employeeList}">
 		<tr>
 			<td><c:out value="${employee.getEmployeeId()}"></c:out></td>
 			<td><c:out value="${employee.getFirstName()}"></c:out></td>
 			<td><c:out value="${employee.getLastName()}"></c:out></td>
 			<td><c:out value="${employee.getManagerId()}"></c:out></td>
-		</tr>
+	    <td>
+        <a href="delete?empId=${employee.getEmployeeId()}">delete</a>
+        </td>
+        <td>
+        <a href="edit?empId=${employee.getEmployeeId()}">edit</a>       
+        </td>
+	 </tr>
 	</c:forEach>
-	</table>
+</table>
 </body>
 </html>
