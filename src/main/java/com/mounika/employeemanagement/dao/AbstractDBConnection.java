@@ -3,9 +3,9 @@ package com.mounika.employeemanagement.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
 public class AbstractDBConnection {
 	Connection connection = null;
-
 	public Connection getConnection() throws SQLException {
 		if (connection == null) {
 			synchronized (AbstractDBConnection.class) {

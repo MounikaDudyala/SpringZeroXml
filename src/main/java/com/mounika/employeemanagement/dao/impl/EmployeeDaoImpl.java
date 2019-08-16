@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.mounika.employeemanagement.dao.AbstractDBConnection;
 import com.mounika.employeemanagement.dao.EmployeeDao;
 import com.mounika.employeemanagement.model.Employee;
+
 @Repository
 public class EmployeeDaoImpl extends AbstractDBConnection implements EmployeeDao {
 	public boolean createEmployee(Employee emp) {
@@ -118,17 +119,16 @@ public class EmployeeDaoImpl extends AbstractDBConnection implements EmployeeDao
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = getConnection();
-			PreparedStatement pstmt = conn.prepareStatement("update Employee set empId=?,FirstName=?,LastName=?,ManagerId=? where EmpId=?");
+			PreparedStatement pstmt = conn
+					.prepareStatement("update Employee set empId=?,FirstName=?,LastName=?,ManagerId=? where EmpId=?");
 			pstmt.setString(1, emp.getEmployeeId());
 			pstmt.setString(2, emp.getFirstName());
 			pstmt.setString(3, emp.getLastName());
 			pstmt.setString(4, emp.getManagerId());
 			pstmt.setString(5, emp.getEmployeeId());
 			int i = pstmt.executeUpdate();
-			if (i ==0) {
+			if (i == 0) {
 				return false;
-				
-
 			} else
 				return true;
 
@@ -139,5 +139,5 @@ public class EmployeeDaoImpl extends AbstractDBConnection implements EmployeeDao
 			System.out.println("message");
 		}
 		return false;
-}
+	}
 }
